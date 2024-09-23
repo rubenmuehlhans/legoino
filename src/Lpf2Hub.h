@@ -65,7 +65,7 @@ public:
   void deregisterPortDevice(byte portNumber);
   void activatePortDevice(byte portNumber, byte deviceType, PortValueChangeCallback portValueChangeCallback = nullptr);
   void activatePortDevice(byte portNumber, PortValueChangeCallback portValueChangeCallback = nullptr);
-  void activatePortDevice(byte portNumber, PortValueChangeCallback portValueChangeCallback, void *context)
+  void activatePortDevice(byte portNumber, PortValueChangeCallback portValueChangeCallback, void *context);
   void deactivatePortDevice(byte portNumber, byte deviceType);
   void deactivatePortDevice(byte portNumber);
 
