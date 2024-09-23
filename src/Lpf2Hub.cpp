@@ -928,18 +928,7 @@ byte Lpf2Hub::getPortForDeviceType(byte deviceType)
     return 255;
 }
 
-/**
- * @brief Set the color of the HUB LED with predefined colors
- * @param [in] color one of the available hub colors
- */
-void Lpf2Hub::setLedColor(Color color)
-{
-    byte port = getPortForDeviceType((byte)DeviceType::HUB_LED);
-    byte setColorMode[8] = {0x41, port, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00};
-    WriteValue(setColorMode, 8);
-    byte setColor[6] = {0x81, port, 0x11, 0x51, 0x00, color};
-    WriteValue(setColor, 6);
-}
+
 
 /**
  * @brief Set the color of the HUB LED with RGB values 
