@@ -208,6 +208,20 @@ void Lpf2Hub::activatePortDevice(byte portNumber, byte deviceType, PortValueChan
     WriteValue(activatePortDeviceMessage, 8);
 }
 
+
+void Lpf2Hub::activatePortDevice(byte portNumber, PortValueChangeCallback portValueChangeCallback, void *context)
+{
+    byte deviceType = getDeviceTypeForPortNumber(portNumber);
+    
+    // Speichere den Kontext und die Callback-Funktion für spätere Nutzung
+    this->callbackContext = context;
+    this->callbackFunction = portValueChangeCallback;
+
+    // Aktivierung des Geräts auf dem angegebenen Port
+    activatePortDevice(portNumber, deviceType, portValueChangeCallback);
+}
+
+
 /**
  * @brief Deactivate device for receiving updates. 
  * 
