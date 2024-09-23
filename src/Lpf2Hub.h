@@ -15,12 +15,14 @@
 #include "NimBLEDevice.h"
 #include "Lpf2HubConst.h"
 #include "LegoinoCommon.h"
+#include <functional>
 
 using namespace std::placeholders;
 
 typedef void (*HubPropertyChangeCallback)(void *hub, HubPropertyReference hubProperty, uint8_t *pData);
-typedef void (*PortValueChangeCallback)(void *hub, byte portNumber, DeviceType deviceType, uint8_t *pData);
+//typedef void (*PortValueChangeCallback)(void *hub, byte portNumber, DeviceType deviceType, uint8_t *pData);
 //typedef void (*PortValueChangeCallbackWithContext)(byte portNumber, DeviceType deviceType, uint8_t *pData, void *context);
+typedef std::function<void(void*, byte, DeviceType, uint8_t*)> PortValueChangeCallback;
 
 struct Device
 {
