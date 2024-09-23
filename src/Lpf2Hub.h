@@ -70,7 +70,7 @@ public:
   // write (set) operations on port devices
   void WriteValue(byte command[], int size);
 
-  void setLedColor(Color color);
+  //void setLedColor(Color color);
   void setLedRGBColor(char red, char green, char blue);
   void setLedHSVColor(int hue, double saturation, double value);
 
