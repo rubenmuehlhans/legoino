@@ -498,7 +498,7 @@ int Lpf2Hub::parseColor(uint8_t *pData)
     {
         color = color + 1;
     }
-    log_d("color: %s (%d)", LegoinoCommon::ColorStringFromColor(color).c_str(), color);
+    //log_d("color: %s (%d)", LegoinoCommon::ColorStringFromColor(color).c_str(), color);
     return color;
 }
 
